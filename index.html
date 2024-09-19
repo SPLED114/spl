@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournament App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Login Section -->
+  <section id="login-section">
+    <div class="login-container">
+      <h1>Welcome to the Tournament App</h1>
+      <p>Earn coins by watching ads and join tournaments to win exciting prizes!</p>
+      <form id="login-form">
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+  </section>
+
+  <!-- Dashboard Section (Hidden initially) -->
+  <section id="dashboard-section" style="display: none;">
+    <div class="dashboard-container">
+      <h1>Your Dashboard</h1>
+      <div class="coin-balance">
+        <p>Coins: <span id="coin-count">0</span></p>
+      </div>
+      <button id="watch-ad-btn">Watch Ad to Earn Coins</button>
+      <h2>Available Tournaments</h2>
+      <div class="tournament-list">
+        <div class="tournament">
+          <h3>BGMI TDM - 8 Players</h3>
+          <p>Entry Fee: 20 Coins</p>
+          <button class="join-btn">Join</button>
+        </div>
+        <div class="tournament">
+          <h3>Ludo - 4 Players</h3>
+          <p>Entry Fee: 40 Coins</p>
+          <button class="join-btn">Join</button>
+        </div>
+        <!-- More tournaments can be added here -->
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+
+<!-- Leaderboard Section -->
+<section id="leaderboard">
+  <h2>Top Players</h2>
+  <ul id="leaderboard-list">
+    <!-- Dynamic Player Rankings will go here -->
+  </ul>
+</section>
+
+<script>
+  // Example Leaderboard Data
+  const players = [{
+      name: "Player 1",
+      coinsWon: 500
+    },
+    {
+      name: "Player 2",
+      coinsWon: 350
+    },
+    {
+      name: "Player 3",
+      coinsWon: 200
+    },
+    // Add more players
+  ];
+  // Display the leaderboard
+  function displayLeaderboard() {
+    const leaderboardList = document.getElementById('leaderboard-list');
+    leaderboardList.innerHTML = ''; // Clear existing leaderboard
+    players.forEach(player => {
+      const playerItem = document.createElement('li');
+      playerItem.innerText = `${player.name} - ${player.coinsWon} Coins`;
+      leaderboardList.appendChild(playerItem);
+    });
+  }
+  // Load leaderboard on page load
+  window.onload = displayLeaderboard;
+</script>
+<scriptsrc="https: //www.gstatic.com/firebasejs/9.0.0/firebase-app.js">
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
